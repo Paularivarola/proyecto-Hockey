@@ -1,0 +1,21 @@
+<%- include("partials/head.ejs")   %>
+<%- include("partials/header.ejs") %>
+
+    <h2 class='subtitle'>About MDHL</h2>
+    <main>
+        <%- include("partials/photos.ejs") %>
+        <section class="seccion2">
+            <div class="contenedor1">
+                <div class="parrafoAbout">
+                    <% info.forEach(info => { %>
+                        <h3><%= info.title %></h3>
+                             <p class="parrafo"><%= info.text %></p>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include("partials/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<%- include("partials/head.ejs")   %>
+<%- include("partials/header.ejs") %>
+<div>
+    <h2 class='subtitle'>Sign In</h2>
+<main>
+    <%- include("partials/photos.ejs") %>
+    <form action='/signin' method='POST'>
+        <h1>Welcome back!</h1>
+        <input type="email" placeholder="Email" name="email" id="email" required/>
+        <input type="password" placeholder="Password" name="password" id="password" required/>
+        <p>Don't have an account?</p><a href='/signup'>Sign up here!</a>
+        <button class="button-form" type="submit" value="Send">Send</button>
+        <% if(error) { %>
+            <p class='error-form'><%= error %></p>
+           <% } %>
+    </form>
+
+</main>
+<%- include("partials/footer.ejs") %>
+</div>

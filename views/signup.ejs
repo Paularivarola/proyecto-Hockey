@@ -1,0 +1,25 @@
+<%- include("partials/head.ejs")   %>
+<%- include("partials/header.ejs") %>
+<div>
+    <h2 class='subtitle'>Sign Up</h2>
+<main>
+    <%- include("partials/photos.ejs") %>
+    <form class='form-sign' action='/signup' method='POST'>
+       <h1>Create Account!</h1>
+         <p>Please fill the details to Sign Up!</p>
+        <input type="text" placeholder="Name" name="name" id="name" required/>
+        <input type="text" placeholder="Lastname" name="lastname" id="lastname" required/>
+        <input type="email" placeholder="Email" name="email" id="email" required/>
+        <input type="password" placeholder="Password" name="password" id="password" required/>
+        <input type="text" placeholder="Url" name="url" id="password" required/>
+        <p>Already have an account?</p><a href='/signin'>Log In here!</a>
+        <button class="button-form" type="submit" value="Send">Send</button>
+        <% if(error) { %>
+          <% error.forEach(err => { %>
+            <p class='error-form'><%= err.message %> </p>
+          <% }) %>
+         <% } %>
+    </form>
+</main>
+ <%- include("partials/footer.ejs") %>
+</div>

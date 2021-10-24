@@ -1,0 +1,43 @@
+<header class='navegation'>
+
+    <div class="user">
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle ms-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class='photo' style="background-image: url('https://i.postimg.cc/jCYWNF6X/37589.jpg')"></div>
+            </a>
+            <ul class="dropdown-menu bg-dark text-center" aria-labelledby="navbarDropdown">    
+                <li><a class="<%= title.includes('Home') %>" href='/'>Home</a></li>
+                <li><a class="<%= title.includes('About') %>" href='/about'>About</a></li>
+                <li><a class="<%= title.includes('Game') %>" href='/game'>Game</a></li>
+                <li><a class="<%= title.includes('Contact') %>" href='/contact'>Contact</a></li>
+                <li><a class="<%= title.includes('Rules') %>" href='/rules'>Rules</a></li>
+            </ul>
+           
+    </div>
+    </div>
+    <h1>MIGHTY DUCKS HOCKEY LEAGUE</h1>
+    <nav>
+        <div class="user">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ms-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <% if(!loggedIn)  { %>
+                        <img class="logo" src="/assets/user.png" alt="user"/>
+                        <% } else { %>
+                            <div class='photo' style="background-image: url('<%= url %>')"></div>
+                        <% } %>
+                </a>
+                <ul class="dropdown-menu bg-dark text-center" aria-labelledby="navbarDropdown">
+                  <li> <% if (!loggedIn) { %>
+                    <a class="<%= title.includes('Sign Up')%>" href="/signup">Sign Up</a></li>
+                    <li> <a class="<%= title.includes('Sign In') %>" href="/signin">Sign In</a></li>
+                <% } else {  %>
+                    <p class='text-white text-center'>Hi! <%= name %></p>
+                    <li><a class="<%= title.includes('Out') %>" href="/signout">Sign Out</a></li>
+                <% } %></li>
+                </ul>  
+        </div>
+        </div>
+    </nav>
+</header>
+
+
